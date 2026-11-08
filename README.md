@@ -43,3 +43,32 @@ IGNORE 1 LINES
 SELECT * FROM online_retail ;
 
 SELECT COUNT(Description01) FROM online_retail ;
+
+SELECT
+    Customer_ID,
+    SUM(Revenue) AS Total_Revenue,
+    ROUND(
+        (SUM(Revenue) / 10693908) * 100,
+        2
+    ) AS Revenue_Percentage
+FROM online_retail
+GROUP BY Customer_ID
+ORDER BY Total_Revenue DESC;
+
+SELECT
+    Customer_ID,
+    COUNT(DISTINCT Invoice_No) AS Total_Orders
+FROM online_retail
+GROUP BY Customer_ID
+HAVING COUNT(DISTINCT Invoice_No) > 1
+ORDER BY Total_Orders DESC;
+
+SELECT
+    Customer_ID,
+    COUNT(DISTINCT Invoice_No) AS Total_Orders
+FROM online_retail
+GROUP BY Customer_ID
+HAVING COUNT(DISTINCT Invoice_No) > 1
+ORDER BY Total_Orders DESC;
+
+
