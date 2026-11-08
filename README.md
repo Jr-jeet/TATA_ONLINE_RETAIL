@@ -40,6 +40,7 @@ IGNORE 1 LINES
 (Description01, Quantity, Unit_Price, Customer_ID, Country, Invoice_No, Stock_Code, Revenue, date, time);
 
 
+# FOR ANAlysis
 SELECT * FROM online_retail ;
 
 SELECT COUNT(Description01) FROM online_retail ;
